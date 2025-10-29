@@ -2,22 +2,25 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-import Home from "./pages/home/Home";
+import { AuthProvider } from "./contexts/AuthContext";
 import Cadastro from "./pages/cadastro/Cadastro";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <div className="min-h-[80vh]">
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/" element={<Cadastro />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <div className="min-h-[80vh]">
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Cadastro />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }
