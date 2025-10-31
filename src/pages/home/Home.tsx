@@ -18,7 +18,7 @@
             <img
               src="https://i.imgur.com/fyfri1v.png"
               alt="Imagem da Página Home"
-              className="w-2/3"
+              className="w-1/2"
             />
           </div>
         </div>

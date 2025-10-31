@@ -1,6 +1,11 @@
-import { createContext, type ReactNode, useState } from "react";
-import type UsuarioLogin from "../models/UsuarioLogin";
-import { login } from "../services/Service";
+import {
+  createContext,
+  Dispatch,
+  type ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
+import UsuarioLogin from "../models/UsuarioLogin";
 
 interface AuthContextProps {
   usuario: UsuarioLogin;
@@ -56,4 +61,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
       {children}
     </AuthContext.Provider>
   );
+}
+function login(
+  arg0: string,
+  usuarioLogin: UsuarioLogin,
+  setUsuario: Dispatch<SetStateAction<UsuarioLogin>>
+) {
+  throw new Error("Function not implemented.");
 }

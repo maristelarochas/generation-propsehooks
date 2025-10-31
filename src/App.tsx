@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import { AuthProvider } from "./contexts/AuthContext";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
           <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
+              <Route path="/login" element={<Login />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/" element={<Cadastro />} />
+              <Route path="/cadastro" element={<Cadastro />} />
             </Routes>
           </div>
           <Footer />
