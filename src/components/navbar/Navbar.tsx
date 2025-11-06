@@ -22,7 +22,14 @@ function Navbar() {
           </Link>
 
           <nav className="flex gap-6 items-center text-sm">
-            Postagens Temas Cadastrar Tema Perfil
+            Postagens
+            <Link to="/temas" className="hover:underline">
+              Temas
+            </Link>
+            <Link to="/cadastrartema" className="hover:underline">
+              Cadastrar tema
+            </Link>
+            Perfil
             <Link to="" onClick={logout} className="hover:underline">
               Sair
             </Link>

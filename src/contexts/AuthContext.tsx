@@ -1,11 +1,6 @@
-import {
-  createContext,
-  Dispatch,
-  type ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
+import { createContext, type ReactNode, useState } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
+import { login } from "../services/Service";
 
 interface AuthContextProps {
   usuario: UsuarioLogin;
@@ -39,6 +34,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       alert("O Usuário foi autenticado com sucesso!");
     } catch (error) {
       alert("Os Dados do usuário estão inconsistentes!");
+      console.log(error);
     }
     setIsLoading(false);
   }
@@ -61,11 +57,4 @@ export function AuthProvider({ children }: AuthProviderProps) {
       {children}
     </AuthContext.Provider>
   );
-}
-function login(
-  arg0: string,
-  usuarioLogin: UsuarioLogin,
-  setUsuario: Dispatch<SetStateAction<UsuarioLogin>>
-) {
-  throw new Error("Function not implemented.");
 }
