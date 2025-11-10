@@ -18,7 +18,7 @@ function Navbar() {
 
   if (usuario.token !== "") {
     component = (
-      <div
+      <nav
         className="w-full flex justify-center py-4
             			   bg-indigo-900 text-white"
       >
@@ -44,7 +44,7 @@ function Navbar() {
             </Link>
           </div>
         </div>
-      </div>
+      </nav>
     );
   }
 
